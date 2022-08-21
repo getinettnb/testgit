@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+{% extends 'main.html'%}
+
+{% block content %}
+<body>
+ This is just testing django home page
+
+<div>
+    {% for room in rooms%}
+    <div>
+        <span>@{{room.host.username}}</span>
+        <h5>
+              {{room.id}}--><a href="/room/{{room.id}}"> {{room.name}}</a>
+        </h5>
+        <small>{{room.topic.name}}</small>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+</body>
+{% endblock %}
+</html>
